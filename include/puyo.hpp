@@ -16,11 +16,11 @@ public:
 
 	typedef enum { red, green, blue, violet, yellow, nil } type;
 
-	bool is_grounded();
+	bool get_grounded();
 
-	int pos_x();
+	int get_x();
 
-	int pos_y();
+	int get_y();
 
 private:
 	type _t;
