@@ -1,7 +1,8 @@
 CC = g++
 CFLAGS = -Wall
 EXEC_NAME = NuitInfo2016
-INCLUDES = -I"boost_1_62/" -I"../include/"
+INCLUDES = -I "include" -I "boost_1_62_0" -I "sfml/include"
+LIBS = -L"SFML/lib" -lsfml-graphics -lsfml-window -lsfml-system
 FILES = src/*.cpp
 INSTALL_DIR = ./bin
 
@@ -11,7 +12,7 @@ clean:
 	rm $(EXEC_NAME).exe $(EXEC_NAME) $(FILES).o
 
 $(EXEC_NAME):
-	$(CC) -o $(EXEC_NAME) $(FILES)
+	$(CC) -o $(EXEC_NAME) $(INCLUDES) $(FILES) $(LIBS)
 
 install:
 	cp $(EXEC_NAME) $(INSTALL_DIR)
