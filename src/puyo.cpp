@@ -1,26 +1,20 @@
 #include <iostream>
 #include "point.hpp"
-#include "puyo.h"
-using namespace std;
+#include "puyo.hpp"
 
 
-	puyo(){}
+	Puyo::Puyo(){}
 
 	bool puyo::get_grounded(){
-		return this.m_grounded;
+		return _grounded;
 	}
 
 	int puyo::get_x(){
-		return this.m_pos.x;
+		return _pos.x;
 	}
 
 	int puyo::get_y(){
-		return this.m_pos.y;
+		return _pos.y;
 	}
 
-	puyo::puyo{}
-
-	puyo::type m_t;
-	point m_pos;
-	bool m_grounded;
 

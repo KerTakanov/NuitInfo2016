@@ -11,6 +11,8 @@ typedef boost::shared_ptr<Puyo> PuyoPtr;
 class Puyo : public Drawable
 {
 public:
+	Puyo();
+	
 	enum type { red, green, blue, violet, yellow, nil };
 
 	bool is_grounded();
@@ -20,9 +22,9 @@ public:
 	int pos_y();
 
 private:
-	puyo::type m_t;
-	point m_pos;
-	bool m_grounded;
+	puyo::type _t;
+	point _pos;
+	bool _grounded;
 };
 
 #endif
