@@ -1,8 +1,8 @@
 CC = g++
 CFLAGS = -Wall
 EXEC_NAME = NuitInfo2016
-INCLUDES = -I"boost_1_62/" -I"include/"
-FILES = $(wildcard ./src/*.cpp)
+INCLUDES = -I"boost_1_62/" -I"../include/"
+FILES = src/*.cpp
 INSTALL_DIR = ./bin
 
 all: $(EXEC_NAME)
