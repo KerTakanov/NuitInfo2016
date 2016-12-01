@@ -3,10 +3,12 @@
 
 #include <boost/smart_ptr.hpp>
 
+#include "drawable.hpp"
+
 class Puyo;
 typedef boost::shared_ptr<Puyo> PuyoPtr;
 
-class Puyo
+class Puyo : public Drawable
 {
 
 };
