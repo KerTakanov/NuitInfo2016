@@ -9,10 +9,13 @@ int main()
     Renderer r;
     sf::Texture t;
     AssetsManager::addTexture("Red Puyo", "assets/red_puyo.png");
+    AssetsManager::addTexture("grid", "assets/grid.png");
     Drawable d = Drawable(r, AssetsManager::get_texture("Red Puyo"));
 
     sf::Clock clock;
     sf::Time deltat;
+
+    Grille g(r, 20, 20);
 
     while (r.isOpen())
     {
@@ -24,15 +27,15 @@ int main()
             if (event.type == sf::Event::Closed)
                 r.get_window()->close();
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-            {
-                // la touche "flèche gauche" est enfoncée : on bouge le personnage
-                d.move(deltat.asSeconds(), -100, 0);
-            }
+                d.move(-32, 0);
             else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-            {
-                d.move(deltat.asSeconds(), 100, 0);
-            }
+                d.move(32, 0);
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+                d.move(0, 32);
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+                d.move(0, -32);
         }
+        g.draw();
         d.draw();
         r.display();
         r.get_window()->clear(sf::Color(0, 0, 0));

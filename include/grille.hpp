@@ -6,13 +6,21 @@
 
 #include "puyo.hpp"
 #include "point.hpp"
+#include "renderer.hpp"
+
+typedef std::map<Point, PuyoPtr> MapGrille;
 
 class Grille
 {
 public:
-    Grille(int lignes, int colonnes);
+    Grille(Renderer& renderer, int lignes, int colonnes);
+
+    void draw();
+
 private:
-    std::map<std::pair<int, int>, PuyoPtr> _grille;
+    MapGrille _grille;
+    sf::Sprite _grid;
+    WindowPtr _window;
 };
 
 #endif
