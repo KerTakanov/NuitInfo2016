@@ -3,6 +3,7 @@
 
 #include <boost/smart_ptr.hpp>
 
+#include "point.hpp"
 #include "drawable.hpp"
 
 class Puyo;
@@ -12,8 +13,8 @@ class Puyo : public Drawable
 {
 public:
 	Puyo();
-	
-	enum type { red, green, blue, violet, yellow, nil };
+
+	typedef enum { red, green, blue, violet, yellow, nil } type;
 
 	bool is_grounded();
 
@@ -22,8 +23,8 @@ public:
 	int pos_y();
 
 private:
-	puyo::type _t;
-	point _pos;
+	type _t;
+	Point _pos;
 	bool _grounded;
 };
 

@@ -5,15 +5,15 @@
 
 	Puyo::Puyo(){}
 
-	bool puyo::get_grounded(){
+	bool Puyo::is_grounded(){
 		return _grounded;
 	}
 
-	int puyo::get_x(){
+	int Puyo::pos_x(){
 		return _pos.x;
 	}
 
-	int puyo::get_y(){
+	int Puyo::pos_y(){
 		return _pos.y;
 	}
 
