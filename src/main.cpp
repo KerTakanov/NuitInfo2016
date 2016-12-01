@@ -1,24 +1,40 @@
-#include <SFML/Graphics.hpp>
+#include <SFML/System/Time.hpp>
+
+#include "drawable.hpp"
+#include "grille.hpp"
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    Renderer r;
+    sf::Texture t;
+    t.loadFromFile("assets/red_puyo.png");
+    Drawable d = Drawable(r, t);
 
-    while (window.isOpen())
+    sf::Clock clock;
+    sf::Time deltat;
+
+    while (r.isOpen())
     {
         sf::Event event;
-        while (window.pollEvent(event))
+        deltat = clock.restart();
+        while (r.get_window()->pollEvent(event))
         {
+            // évènement "fermeture demandée" : on ferme la fenêtre
             if (event.type == sf::Event::Closed)
-                window.close();
+                r.get_window()->close();
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+            {
+                // la touche "flèche gauche" est enfoncée : on bouge le personnage
+                d.move(deltat.asSeconds(), -100, 0);
+            }
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+            {
+                d.move(deltat.asSeconds(), 100, 0);
+            }
         }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
+        d.draw();
+        r.display();
+        r.get_window()->clear(sf::Color(0, 0, 0));
     }
-
     return 0;
 }

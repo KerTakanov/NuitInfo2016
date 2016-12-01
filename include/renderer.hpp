@@ -10,6 +10,10 @@ class Renderer
 {
 public:
     Renderer();
+
+    WindowPtr get_window();
+    void display();
+    bool isOpen();
 private:
     WindowPtr _window;
 };

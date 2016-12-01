@@ -1,0 +1,6 @@
+CamelCase: Majuscule Au Debut De Chaque Mot (bien sûr sans espaces pour les noms de var...)
+
+Noms des classes: CamelCase
+Noms des attributs (dans une classe) privés: _nom_attribut
+Noms des méthodes (dans une classe): methode_qui_fait_quelque_chose(type param1)
+Noms des fichiers en minuscule. Extension header: .hpp, extension implémentation: .cpp
