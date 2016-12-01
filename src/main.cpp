@@ -1,5 +1,6 @@
 #include <SFML/System/Time.hpp>
 
+#include "assetsmanager.hpp"
 #include "drawable.hpp"
 #include "grille.hpp"
 
@@ -7,8 +8,8 @@ int main()
 {
     Renderer r;
     sf::Texture t;
-    t.loadFromFile("assets/red_puyo.png");
-    Drawable d = Drawable(r, t);
+    AssetsManager::addTexture("Red Puyo", "assets/red_puyo.png");
+    Drawable d = Drawable(r, AssetsManager::get_texture("Red Puyo"));
 
     sf::Clock clock;
     sf::Time deltat;

@@ -10,7 +10,7 @@
 class Grille
 {
 public:
-
+    Grille(int lignes, int colonnes);
 private:
     std::map<std::pair<int, int>, PuyoPtr> _grille;
 };
