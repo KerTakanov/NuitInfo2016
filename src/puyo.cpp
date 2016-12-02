@@ -3,7 +3,7 @@
 #include "puyo.hpp"
 
 
-	Puyo::Puyo(int x2, int y2, type t2){
+	Puyo::Puyo(int x2, int y2, Puyo::type t2){
 		_pos.x=x2;
 		_pos.y=y2;
 		_grounded=false;
@@ -42,7 +42,7 @@
 		_grounded=g1;
 	}
 
-	void Puyo::set_t(type t1){
+	void Puyo::set_t(Puyo::type t1){
 		_t=t1;
 	}
 
