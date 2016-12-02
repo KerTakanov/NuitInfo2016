@@ -25,12 +25,12 @@
 		_pos.x=x1;
 	}
 
-	void Puyo::set_y(y1){
+	void Puyo::set_y(int y1){
 		_pos.y=y1;
 	}
 
 	void Puyo::set_grounded(bool g1){
-		_grounded=ground;
+		_grounded=g1;
 	}
 
 	void Puyo::set_t(type t1){
