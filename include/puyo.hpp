@@ -12,6 +12,9 @@ typedef boost::shared_ptr<Puyo> PuyoPtr;
 class Puyo : public Drawable
 {
 public:
+
+	Puyo(int x2, int y2, type t2);
+
 	Puyo();
 
 	typedef enum { red, green, blue, violet, yellow, nil } type;

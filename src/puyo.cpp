@@ -3,9 +3,18 @@
 #include "puyo.hpp"
 
 
-	Puyo::Puyo(){}
+	Puyo::Puyo(int x2, int y2, type t2){
+		_pos.x=x2;
+		_pos.y=y2;
+		_grounded=false;
+		_t=t2;
+	}
 
-	puyo::type Puyo::get_t(){
+	Puyo::Puyo(){
+
+	}
+
+	Puyo::type Puyo::get_t(){
 		return _t;
 	}
 
