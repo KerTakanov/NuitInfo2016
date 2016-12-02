@@ -5,7 +5,7 @@
 
 	Puyo::Puyo(){}
 
-	type Puyo::get_t(){
+	puyo::type Puyo::get_t(){
 		return _t;
 	}
 
