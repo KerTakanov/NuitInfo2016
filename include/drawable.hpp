@@ -18,6 +18,11 @@ public:
         _window->draw(_sprite);
     }
 
+    void set_pos(float x, float y)
+    {
+        _sprite.setPosition(sf::Vector2f(x, y));
+    }
+
     void move(float x, float y)
     {
         move(1, x, y);
